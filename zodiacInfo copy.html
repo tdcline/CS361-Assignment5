@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zodiac Information Screen</title>
+</head>
+<body>
+  <center><h1>Zodiac Information</h1></center>
+
+  <fieldset>
+    <legend>That date is a...</legend>
+    <center><div id='theOne'>
+    
+    </div></center>
+  </fieldset>
+
+  <script>
+    let params = new URLSearchParams(document.location.search);
+    let date = params.get('userDate');
+    const month = parseInt(date.slice(-5, -3));
+    const day = parseInt(date.slice(-2));
+    
+    let zodiac;
+    if(month == 1) {
+      zodiac = 'Aquarius';
+    } else if (month == 2) {
+      zodiac = 'Pisces';
+    } else if (month == 3) {
+      zodiac = 'Aries';
+    } else if (month == 4) {
+      zodiac = 'Taurus';
+    } else if (month == 5) {
+      zodiac = 'Gemini';
+    } else if (month == 6) {
+      zodiac = 'Cancer';
+    } else if (month == 7) {
+      zodiac = 'Leo';
+    } else if (month == 8) {
+      zodiac = 'Virgo';
+    } else if (month == 9) {
+      zodiac = 'Libra';
+    } else if (month == 10) {
+      zodiac = 'Scorpio';
+    } else if (month == 11) {
+      zodiac = 'Sagittarius';
+    } else {
+      zodiac = 'Carpricorn';
+    }
+    
+    const sign = document.createTextNode(zodiac);
+    
+    const div = document.getElementById('theOne');
+    div.appendChild(sign);
+
+  </script>
+
+  <p>
+    <a href="./homepage.html"><button>Select Again</button></a>
+  </p>
+</body>
+</html>
